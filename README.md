@@ -15,7 +15,7 @@ zkteco machines and transfer them to hr attendance.
 > 
 > <span style="color: #ff0000;">Please Visit the image folder in the main folder of the module (hr_pyzk/images) to view different processes.</span>
 
-1.  <span style="color: #000000;">After the installation of the module make sure to make the user member of **"Device/Manager" Security group.**</span>
+1.  <span style="color: #000000;">Make sure you copy the module in addons folder of odoo. After the installation of the module make sure to make the user member of **"Device/Manager" Security group.**</span>
 2.  <span style="color: #000000;">Create attendance devices. Please make sure password is defined on the machine.I think default password is nothing but I am not sure.If device status is defined Inactive the users and attendances will not be imported from it.</span>
 3.  <span style="color: #000000;">After defining the device import device users using "User/Attendance Wizard".</span>
 4.  <span style="color: #000000;">Define related odoo employees for device users. If Odoo employees are not defined the attendance will not be transferred.</span>
