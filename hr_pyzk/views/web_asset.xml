@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+ <data>
+ <template id="assets_backend" name="x_export_view assets" inherit_id="web.assets_backend">
+ <xpath expr="." position="inside">
+ <script type="text/javascript" src="/hr_pyzk/static/src/js/sync.js"></script>
+ </xpath>
+ </template>
+ </data>
+</odoo>

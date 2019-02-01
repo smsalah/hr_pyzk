@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: pyzk
+Version: 0.9
+Summary: an unofficial library of zksoftware fingerprint device
+Home-page: https://github.com/fananimi/pyzk
+Author: Fanani M. Ihsan
+Author-email: fanani.mi@gmail.com
+License: LICENSE.txt
+Description: UNKNOWN
+Keywords: zk,pyzk,zksoftware,attendance machine,fingerprint,biometrics,security
+Platform: UNKNOWN

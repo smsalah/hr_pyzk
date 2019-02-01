@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--Views -->
+        <record id="combined_attendances_tree_view" model="ir.ui.view">
+            <field name="name">combined_attendances_tree_view</field>
+            <field name="model">combined.attendances</field>
+            <field name="arch" type="xml">
+                <tree string="Combined Attendances">
+                    <field name="device_user_id"/>
+                    <field name="employee_id"/>
+                    <field name="device_date"/>
+                    <field name="device_clockin"/>
+                    <field name="device_clockout"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="combined_attendances_form_view" model="ir.ui.view">
+            <field name="name">combined_attendances_form_view</field>
+            <field name="model">combined.attendances</field>
+            <field name="arch" type="xml">
+                <form string="Combined Attendances">
+                    <sheet>
+                        <group>
+                            <field name="device_user_id"/>
+                            <field name="employee_id"/>
+                            <field name="device_date"/>
+                            <field name="device_clockin"/>
+                            <field name="device_clockout"/>
+                            <field name="state"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="combined_attendances_search_view" model="ir.ui.view">
+            <field name="name">combined_attendances_search_view</field>
+            <field name="model">combined.attendances</field>
+            <field name="arch" type="xml">
+                <search string="Combined Attendances">
+                    <field name="device_user_id"/>
+                    <field name="employee_id"/>
+                    <field name="device_date"/>
+                    <field name="device_clockin"/>
+                    <field name="device_clockout"/>
+                    <field name="state"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- window action -->
+        <!--  Attendance Action -->
+        <record id="combined_attendances_action" model="ir.actions.act_window">
+            <field name="name">Combined Attendances</field>
+            <field name="res_model">combined.attendances</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="combined_attendances_tree_view"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Combine Attendances </p>
+            </field>
+        </record>
+        <!-- Data Menu -->
+        <menuitem id="combined_attendances_menu_item"  name="Combined Attendances"
+                  action="combined_attendances_action" parent="attendance_sub_menu" sequence="2"/>
+
+    </data>
+</odoo>

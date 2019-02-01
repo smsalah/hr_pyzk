@@ -1,0 +1,5 @@
+<odoo>
+    <record id="device_manager" model="res.groups">
+        <field name="name">Device / Manager</field>
+    </record>
+</odoo>

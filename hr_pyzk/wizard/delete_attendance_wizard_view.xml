@@ -1,0 +1,35 @@
+<odoo>
+    <record id="delete_attendance_wizard" model="ir.ui.view">
+        <field name="name">delete_attendance_wizard</field>
+        <field name="model">delete.attendance.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Delete Attendance">
+                <group>
+                    <field name="device_id" required="True"/>
+                </group>
+                <footer>
+                    <button name="delete_attendance" type="object"
+                            string="Delete Attendance" class="oe_highlight"
+                    confirm="Are you sure you want to delete the attendances from the device.
+                    The process is irreversible?"/>
+                   OR
+                    <button special="cancel" string="Cancel" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="delete_attendance_wizard_action" model="ir.actions.act_window">
+          <field name="name">Delete Attendance</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">delete.attendance.wizard</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">form</field>
+          <field name="target">new</field>
+          <field name="view_id" ref="delete_attendance_wizard"/>
+        </record>
+        
+        <menuitem id="delete_attendance_wizard_menu_item"  name="Delete Attendance Wizard"
+                  action="delete_attendance_wizard_action" parent="wizards_sub_menu" sequence="2"/>
+
+</odoo>

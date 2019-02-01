@@ -1,0 +1,45 @@
+<h1 style="text-align: center;"><span style="color: #339966;"><strong>Introduction</strong></span><br /><br /></h1>
+<p>This repository contains an odoo module for attendance. it brings attendance from <br />zkteco machines and transfer them to hr attendance.<br /><br /></p>
+<h2 style="text-align: center;"><span style="color: #339966;">Here is how it workds</span></h2>
+<p>&nbsp;</p>
+<p><span style="color: #339966;">&nbsp;</span></p>
+<blockquote>
+<p><span style="color: #ff0000;"><strong>Important!</strong> </span></p>
+<p><span style="color: #ff0000;">&nbsp;</span></p>
+<p><span style="color: #ff0000;">Install pyzk library first. the library is included in the module directory hr_pyzk/pyzk-master. you can also get it from the following link . You can also get it from the following <a href="https://github.com/fananimi/pyzk" target="_blank" rel="noopener">here</a>. To install the library go to pyzk_master folder and run python setup.py.</span></p>
+<p><span style="color: #ff0000;">Please Visit the image folder in the main folder of the module (hr_pyzk/images) to view different processes.</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h4>&nbsp;</h4>
+</blockquote>
+<ol>
+<li><span style="color: #000000;">After the installation of the module make sure to make the user member of <strong>"Device/Manager" Security group.</strong></span></li>
+<li><span style="color: #000000;">Create attendance devices. Please make sure password is defined on the machine.I think default&nbsp;password is nothing but I am not sure.If device status is defined Inactive the users and attendances will not be imported from it.</span></li>
+<li><span style="color: #000000;">After defining the device import device users using "User/Attendance Wizard".</span></li>
+<li><span style="color: #000000;">Define related odoo employees for device users. If Odoo employees are not defined the attendance will not be transferred.</span></li>
+<li><span style="color: #000000;">Import attendance from the device using "User/Attendance Wizard". Their are separate records for clock ins and clockouts for all users from all devices.</span></li>
+<li><span style="color: #000000;">Combine attendance using "User/Attendance Wizard". combining means relevant clocin and clock outs will be joined for each user. the logic work as follows.<br />The system makes pairs between subsequent Clock in /clock out. If a user forget clocking out the system will look for the next clock out and ignore a repeating clock in even if it is legal.</span></li>
+<li><span style="color: #000000;">Transfer attendance to HR Attendance using "User/Attendance Wizard".</span></li>
+<li><span style="color: #000000;">Delete Attendance from selected device. Be carefull.</span></li>
+<li><span style="color: #000000;">You can create fingerprint user by clicking create user and than click "Create Fingerprint User".</span></li>
+<li>You can Edit existing users by clicking "Edit/Update Existing fingperint User" button in the user form view.</li>
+</ol>
+<p>&nbsp;</p>
+<h2 style="text-align: center;"><span style="color: #339966;">Compatible Devices</span></h2>
+<p>&nbsp;</p>
+<p><span style="color: #339966;">&nbsp;</span></p>
+<ul>
+<li>Firmware Version : Ver 6.21 Nov 19 2008 Platform : ZEM500 DeviceName : U580</li>
+<li>Firmware Version : Ver 6.60 Apr 9 2010 Platform : ZEM510_TFT DeviceName : T4-C</li>
+<li>Firmware Version : Ver 6.60 Dec 1 2010 Platform : ZEM510_TFT DeviceName : T4-C</li>
+<li>Firmware Version : Ver 6.60 Mar 18 2011 Platform : ZEM600_TFT DeviceName : iClock260</li>
+<li>Platform : ZEM560_TFT Firmware Version : Ver 6.60 Feb 4 2012 DeviceName :</li>
+<li>Firmware Version : Ver 6.60 Oct 29 2012 Platform : ZEM800_TFT DeviceName : iFace402/ID</li>
+<li>Firmware Version : Ver 6.60 Mar 18 2013 Platform : ZEM560 DeviceName : MA300</li>
+<li>Firmware Version : Ver 6.60 Dec 27 2014 Platform : ZEM600_TFT DeviceName : iFace800/ID</li>
+<li>Firmware Version : Ver 6.60 Nov 6 2017 (remote tested with correct results) Platform : ZMM220_TFT DeviceName : (unknown device) (broken info but at least the important data was read)</li>
+<li>Firmware Version : Ver 6.60 Jun 9 2017 Platform : JZ4725_TFT DeviceName : K20 (latest checked correctly!)</li>
+<li>Firmware Version : Ver 6.60 Aug 23 2014 Platform : ZEM600_TFT DeviceName : VF680 (face device only, but we read the user and attendance list!)</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

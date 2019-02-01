@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+device_users,Device Users,model_device_users,device_manager,1,1,1,1
+devices,Devices,model_devices,device_manager,1,1,1,1
+device_attendances,Device Attendances,model_device_attendances,device_manager,1,1,1,1
+combined_attendances,Combined Attendances,model_combined_attendances,device_manager,1,1,1,1
+user_wizard,User Wizard,model_user_wizard,device_manager,1,1,1,1

@@ -1,0 +1,40 @@
+<odoo>
+    <record id="import_device_users_wizard" model="ir.ui.view">
+        <field name="name">import_device_users</field>
+        <field name="model">user.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Import Users">
+                <group>
+                </group>
+                <footer>
+                    <button name="import_users" type="object"
+                            string="Import Users" class="oe_highlight"/>
+                    ==>
+                    <button name="import_attendance" type="object"
+                            string="Import Attendance" class="oe_highlight"/>
+                    ==>
+                    <button name="combine_attendance" type="object"
+                            string="Combine Attendances" class="oe_highlight"/>
+                    ==>
+                    <button name="transfer_attendance" type="object"
+                            string="Transfer Attendances" class="oe_highlight"/>
+                    ==>
+                    <button special="cancel" string="Cancel" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="import_device_users_wizard_action" model="ir.actions.act_window">
+          <field name="name">Import users and Attendances from Fingerprint Devices, Combine them and Transfer to HR Attendances</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">user.wizard</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">form</field>
+          <field name="target">new</field>
+          <field name="view_id" ref="import_device_users_wizard"/>
+        </record>
+
+        <menuitem id="user_wizard_menu_item"  name="User/Attendance Wizard"
+                  action="import_device_users_wizard_action" parent="wizards_sub_menu" sequence="1"/>
+</odoo>

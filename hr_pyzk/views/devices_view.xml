@@ -1,0 +1,56 @@
+<odoo>
+        <!--Views -->
+
+        <record id="devices_tree_view" model="ir.ui.view"  >
+            <field name="name">devices_tree_view</field>
+            <field name="model">devices</field>
+            <field name="arch" type="xml">
+                <tree string="Devices">
+                    <field name="name"/>
+                    <field name="ip_address"/>
+                    <field name="port"/>
+                    <field name="sequence"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="devices_form_view" model="ir.ui.view">
+            <field name="name">devices_form_view</field>
+            <field name="model">devices</field>
+            <field name="arch" type="xml">
+                <form string="Devices">
+                    <group>
+                        <field name="name" required = "True"/>
+                        <field name="ip_address" placeholder="10.144.74.71" required = "True"/>
+                        <field name="port" required = "True"/>
+                        <field name="device_password"  password="True" />
+                        <field name="sequence"/>
+                        <field name="state" required = "True"/>
+                        <field name="difference" required = "True"/>
+                    </group>
+                    <footer>
+                        <button class="oe_highlight" name="test_connection" string="Test connection" type="object"/>
+                    </footer>
+
+                    <div class="alert alert-success alert-dismissible" invisible="not context.get('show_message1',
+                    False)">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">X</a>
+                        <strong>Success!</strong> Device Connected Successfully
+                    </div>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="devices_actions" model="ir.actions.act_window">
+            <field name="name"> Fingerprint Devices</field>
+            <field name="res_model">devices</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help">This view shows fingerprint devices</field>
+        </record>
+
+        <menuitem id="devices_menu_item"  name="Devices" action="devices_actions" parent="devices_sub_menu" sequence="1"/>
+
+</odoo>

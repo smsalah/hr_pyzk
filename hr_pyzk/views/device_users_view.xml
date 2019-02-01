@@ -1,0 +1,86 @@
+<odoo>
+        <record id="device_users_tree_view" model="ir.ui.view">
+            <field name="name">device_users_tree_view</field>
+            <field name="model">device.users</field>
+            <field name="arch" type="xml">
+                <tree string="Device Users Tree View">
+                   <!-- <field name="device_uid"/> -->
+                    <field name="device_user_id"/>
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="device_users_form_view" model="ir.ui.view">
+            <field name="name">device_users_form_view</field>
+            <field name="model">device.users</field>
+            <field name="arch" type="xml">
+                <form string="Device Users Form view">
+                    <group>
+                        <field name="device_user_id" required="True"/>
+                         <field name="name" required="True"/>
+                        <field name="employee_id"/>
+                        <field name="device_id"/>
+                    </group>
+                    <footer>
+                        <button class="oe_highlight" name="create_user" string="Create Fingerprint User" type="object"/>
+                        OR
+                        <button class="oe_highlight" name="edit_user" string="Edit/Update Existing Fingerprint User" type="object"/>
+
+                    </footer>
+
+                    <div class="alert alert-success alert-dismissible" invisible="not context.get('show_message1', False)">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">X</a>
+                        <strong>Success!</strong> Fingerprint User has been created successfully.
+                    </div>
+
+                    <div class="alert alert-danger alert-dismissible" invisible="not context.get('show_message2', False)">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">X</a>
+                        <strong>Warning!</strong> pyzk_id has already been taken. Please choose a new pyzk_id .
+                    </div>
+
+                    <div class="alert alert-success alert-dismissible" invisible="not context.get('show_message3', False)">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">X</a>
+                        <strong>Success!</strong> Existing User has been updated successfully .
+                    </div>
+
+                    <div class="alert alert-danger alert-dismissible" invisible="not context.get('show_message4', False)">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">X</a>
+                        <strong>Warning!</strong> User does not exist in the fingerprint device. Please create the user first.
+                    </div>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="device_users_search_view" model="ir.ui.view">
+            <field name="name">device_users_search_view</field>
+            <field name="model">device.users</field>
+            <field name="arch" type="xml">
+                <search string="Device users Search View">
+                    <!-- <field name="device_uid"/> -->
+                    <field name="device_user_id"/>
+                    <field name="employee_id"/>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="device_users_action" model="ir.actions.act_window">
+            <field name="name">Device Users</field>
+            <field name="res_model">device.users</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help">The view shows Device users. Please use "Import User from Device"
+            to import users here Or create users manually here and export them to the device</field>
+        </record>
+
+        <menuitem id="root_menu" name=" Device Attendance" sequence="10"/>
+        <menuitem id="attendance_sub_menu" name="Attendance" parent="root_menu" sequence="1"/>
+        <menuitem id="users_sub_menu" name="Device Users" parent="root_menu" sequence="10"/>
+        <menuitem id="devices_sub_menu" name="Devices" parent="root_menu" sequence="20"/>
+        <menuitem id="wizards_sub_menu" name="Wizards" parent="root_menu" sequence="30"/>
+        <menuitem id="user_menu_item"  name="Users" action="device_users_action" parent="users_sub_menu" sequence="1"/>
+
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="sync_template" xml:space="preserve">
+ <t t-extend="ListView.buttons">
+ <t t-jquery="button.o_list_button_add" t-operation="after">
+ <t t-if="widget.model == 'pyzk_attendances.data'">
+ <button class="btn btn-sm btn-default sync_button" type="button">Sync Data</button>
+ </t>
+ </t>
+ </t>
+</templates>
