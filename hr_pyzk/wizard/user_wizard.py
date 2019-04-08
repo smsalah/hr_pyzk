@@ -65,7 +65,7 @@ class UserWizard(models.TransientModel):
         for a in all_clocks:
             attendance_object.create({
                 'device_user_id': int(a[0]),
-                'device_datetime': a[1],
+                'device_datetime': a[1]+ datetime.timedelta(hours=device.difference),
                 'device_punch': a[2],
                 #'repeat': a[4],
                 'attendance_state': 0,
