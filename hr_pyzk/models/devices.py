@@ -16,7 +16,7 @@ class Devices(models.Model):
     device_password = fields.Char(string='Device Password')
     state = fields.Selection([(0, 'Active'), (1, 'Inactive')], string='Status', default=1)
     difference = fields.Float(string='Time Difference with UTC',
-                              help = "Please enter the time difference betwneen local and UTC times in hours")
+                              help = "Please enter the time difference betwneen local and UTC times in hours", default=0)
 
     def test_connection(self):
         with c.ConnectToDevice(self.ip_address, self.port, self.device_password) as conn:
